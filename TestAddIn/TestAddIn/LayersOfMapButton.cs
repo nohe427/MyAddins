@@ -29,7 +29,7 @@ namespace TestAddIn
             {
                 layer = map.Layer[i];
                 bool visibility = layer.Visible;
-                data += ">> " + layer.Name[i] + "\n";
+                data += ">> " + layer.Name + "\n";
             }
             layer = null;
             data += string.Format( "{0} Map contains {1} Layers\n", map.Name, map.LayerCount);
