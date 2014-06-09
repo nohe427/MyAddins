@@ -1,0 +1,20 @@
+﻿<ESRI.Configuration xmlns="http://schemas.esri.com/Desktop/AddIns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>TestAddIn</Name>
+  <AddInID>{183aa71d-71d3-4d9a-b014-3d527d4f02ce}</AddInID>
+  <Description>Display layers in a popup window</Description>
+  <Version>1.0</Version>
+  <Image>Images\TestAddIn.png</Image>
+  <Author>Alexander N</Author>
+  <Company>Alexander N</Company>
+  <Date>6/8/2014</Date>
+  <Targets>
+    <Target name="Desktop" version="10.2" />
+  </Targets>
+  <AddIn language="CLR4.5" library="TestAddIn.dll" namespace="TestAddIn">
+    <ArcMap>
+      <Commands>
+        <Button id="Alexander_N_TestAddIn_LayersOfMapButton" class="LayersOfMapButton" message="Layers shown in a map." caption="Show Layers" tip="Display the layers in a map in a message box label." category="Alexander Nohe" image="Images\LayersOfMapButton.png" />
+      </Commands>
+    </ArcMap>
+  </AddIn>
+</ESRI.Configuration>
