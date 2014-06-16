@@ -1,0 +1,3 @@
+from comtypes.gen import _A7C74158_1062_4664_B404_8694D490FCD1_0_10_2
+globals().update(_A7C74158_1062_4664_B404_8694D490FCD1_0_10_2.__dict__)
+__name__ = 'comtypes.gen.esriGeoDatabaseDistributed'

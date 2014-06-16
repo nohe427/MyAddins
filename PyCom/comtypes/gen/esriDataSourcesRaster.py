@@ -1,0 +1,3 @@
+from comtypes.gen import _8F0541A3_D5BE_4B3F_A8D9_062D5579E19B_0_10_2
+globals().update(_8F0541A3_D5BE_4B3F_A8D9_062D5579E19B_0_10_2.__dict__)
+__name__ = 'comtypes.gen.esriDataSourcesRaster'
