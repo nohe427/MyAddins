@@ -13,6 +13,7 @@ using ESRI.ArcGIS.Controls;
 using ESRI.ArcGIS.ADF;
 using ESRI.ArcGIS.SystemUI;
 using ESRI.ArcGIS.Geometry;
+using ESRI.ArcGIS.Geodatabase;
 
 namespace MapControlApplication3
 {
@@ -115,7 +116,7 @@ namespace MapControlApplication3
             {
                 //enable the Save manu and write the doc name to the statusbar
                 menuSaveDoc.Enabled = true;
-                statusBarXY.Text = Path.GetFileName(m_mapDocumentName);
+                statusBarXY.Text = System.IO.Path.GetFileName(m_mapDocumentName);
             }
         }
 
@@ -130,8 +131,9 @@ namespace MapControlApplication3
             double ypoint = e.mapY;
             IPoint point = new PointClass();
             point.PutCoords(xpoint, ypoint);
-            IFeatureLayer feature = point as IFeatureLayer;
-            feature.Draw(1, ,) 
+            IFeatureLayer2 feature = point as IFeatureLayer2;
+            IFeatureClass data = feature as IFeatureClass;
+            
         }
     }
 }
