@@ -133,9 +133,12 @@ namespace MapControlApplication3
             IPoint point = new PointClass();
             point.PutCoords(xpoint, ypoint);
             IWorkspaceFactory wsf = new FileGDBWorkspaceFactory();
-            IFeatureWorkspace ws = wsf.OpenFromFile(@"C:\Users\AlexanderN\Documents\ArcGIS\Default.gdb", 0) as IFeatureWorkspace;
-            IFeatureLayer2 feature = point as IFeatureLayer2;
-            IFeatureClass data = feature as IFeatureClass;
+            IFeatureWorkspace ws = wsf.OpenFromFile(@"C:\TestGDB\Feature.gdb", 0) as IFeatureWorkspace;
+            IFeature pointfc = ws.OpenFeatureClass("Points") as IFeature;
+            IFeatureCursor pointFC = pointfc as IFeatureCursor;
+            IFeatureBuffer fbuffer = point as IFeatureBuffer;
+            pointFC.InsertFeature(fbuffer);
+            
         }
     }
 }
