@@ -136,7 +136,8 @@ namespace MapControlApplication3
             IFeatureWorkspace ws = wsf.OpenFromFile(@"C:\TestGDB\Feature.gdb", 0) as IFeatureWorkspace;
             IFeature pointfc = ws.OpenFeatureClass("Points") as IFeature;
             IFeatureCursor pointFC = pointfc as IFeatureCursor;
-            IFeatureBuffer fbuffer = point as IFeatureBuffer;
+            IFeatureBuffer fbuffer = new Feature() as IFeatureBuffer;
+            fbuffer.Shape = point;
             pointFC.InsertFeature(fbuffer);
             
         }
