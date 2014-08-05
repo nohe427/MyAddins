@@ -132,12 +132,14 @@ namespace MapControlApplication3
             double ypoint = e.mapY;
             IPoint point = new PointClass();
             point.PutCoords(xpoint, ypoint);
-            IWorkspaceFactory wsf = new FileGDBWorkspaceFactory();
+            IWorkspaceFactory wsf = new FileGDBWorkspaceFactory();   
             IFeatureWorkspace ws = wsf.OpenFromFile(@"C:\TestGDB\Feature.gdb", 0) as IFeatureWorkspace;
-            IFeature pointfc = ws.OpenFeatureClass("Points") as IFeature;
+            IGeoDataset pointfc = ws.OpenFeatureClass(@"Points") as IGeoDataset;
+            point.SpatialReference = pointfc.SpatialReference;
+            IGeometry point2 = point as IGeometry;
             IFeatureCursor pointFC = pointfc as IFeatureCursor;
             IFeatureBuffer fbuffer = new Feature() as IFeatureBuffer;
-            fbuffer.Shape = point as IGeometry;
+            fbuffer.Shape = point2;
             pointFC.InsertFeature(fbuffer);
             
         }
