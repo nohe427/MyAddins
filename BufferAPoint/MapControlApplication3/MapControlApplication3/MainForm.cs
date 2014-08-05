@@ -137,9 +137,11 @@ namespace MapControlApplication3
             IGeoDataset pointfc = ws.OpenFeatureClass(@"Points") as IGeoDataset;
             point.SpatialReference = pointfc.SpatialReference;
             IGeometry point2 = point as IGeometry;
-            IFeatureCursor pointFC = pointfc as IFeatureCursor;
-            IFeatureBuffer fbuffer = new Feature() as IFeatureBuffer;
-            fbuffer.Shape = point2;
+            IFeatureClass pointfc2 = pointfc as IFeatureClass;
+            pointfc2.CreateFeature();
+            IFeatureCursor pointFC = pointfc2 as IFeatureCursor;
+            IFeatureBuffer fbuffer = pointfc2.CreateFeatureBuffer();
+            fbuffer.Shape = point;
             pointFC.InsertFeature(fbuffer);
             
         }
