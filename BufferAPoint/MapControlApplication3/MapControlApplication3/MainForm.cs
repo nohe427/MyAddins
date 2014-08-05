@@ -14,6 +14,7 @@ using ESRI.ArcGIS.ADF;
 using ESRI.ArcGIS.SystemUI;
 using ESRI.ArcGIS.Geometry;
 using ESRI.ArcGIS.Geodatabase;
+using ESRI.ArcGIS.DataSourcesGDB;
 
 namespace MapControlApplication3
 {
@@ -131,9 +132,10 @@ namespace MapControlApplication3
             double ypoint = e.mapY;
             IPoint point = new PointClass();
             point.PutCoords(xpoint, ypoint);
+            IWorkspaceFactory wsf = new FileGDBWorkspaceFactory();
+            IFeatureWorkspace ws = wsf.OpenFromFile(@"C:\Users\AlexanderN\Documents\ArcGIS\Default.gdb", 0) as IFeatureWorkspace;
             IFeatureLayer2 feature = point as IFeatureLayer2;
             IFeatureClass data = feature as IFeatureClass;
-            
         }
     }
 }
