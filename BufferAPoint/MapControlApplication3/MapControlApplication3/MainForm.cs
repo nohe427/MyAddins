@@ -137,7 +137,7 @@ namespace MapControlApplication3
             IFeature pointfc = ws.OpenFeatureClass("Points") as IFeature;
             IFeatureCursor pointFC = pointfc as IFeatureCursor;
             IFeatureBuffer fbuffer = new Feature() as IFeatureBuffer;
-            fbuffer.Shape = point;
+            fbuffer.Shape = point as IGeometry;
             pointFC.InsertFeature(fbuffer);
             
         }
