@@ -133,17 +133,19 @@ namespace MapControlApplication3
             IPoint point = new PointClass();
             point.PutCoords(xpoint, ypoint);
             IWorkspaceFactory wsf = new FileGDBWorkspaceFactory();   
-            IFeatureWorkspace ws = wsf.OpenFromFile(@"C:\TestGDB\Feature.gdb", 0) as IFeatureWorkspace;
+            IFeatureWorkspace ws = wsf.OpenFromFile(@"\\alexn\TestGDB\Feature.gdb", 0) as IFeatureWorkspace;
             IGeoDataset pointfc = ws.OpenFeatureClass(@"Points") as IGeoDataset;
             point.SpatialReference = pointfc.SpatialReference;
-            IGeometry point2 = point as IGeometry;
+            //IGeometry point2 = point as IGeometry;
             IFeatureClass pointfc2 = pointfc as IFeatureClass;
             IFeature pointfc3 = pointfc2.CreateFeature();
             IFeatureCursor pointFC = pointfc2.Insert(true);
             IFeatureBuffer fbuffer = pointfc2.CreateFeatureBuffer();
             fbuffer.Shape = point;
             pointFC.InsertFeature(fbuffer);
-            
+            IActiveView display = axMapControl1.ActiveView;
+            display.Activate(0);
+            display.Refresh();
         }
     }
 }
