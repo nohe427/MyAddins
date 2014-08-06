@@ -138,8 +138,8 @@ namespace MapControlApplication3
             point.SpatialReference = pointfc.SpatialReference;
             IGeometry point2 = point as IGeometry;
             IFeatureClass pointfc2 = pointfc as IFeatureClass;
-            pointfc2.CreateFeature();
-            IFeatureCursor pointFC = pointfc2 as IFeatureCursor;
+            IFeature pointfc3 = pointfc2.CreateFeature();
+            IFeatureCursor pointFC = pointfc2.Insert(true);
             IFeatureBuffer fbuffer = pointfc2.CreateFeatureBuffer();
             fbuffer.Shape = point;
             pointFC.InsertFeature(fbuffer);
