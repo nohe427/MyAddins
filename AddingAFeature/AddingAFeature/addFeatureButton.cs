@@ -16,32 +16,34 @@ namespace AddingAFeature
         {
         }
 
-        protected override void OnClick()
+       protected override void OnClick()
         {
             //
             //  TODO: Sample code showing how to access button host
             //
             // ArcMap.Application.CurrentTool = null;
-            IDocument doc = ArcMap.Application.Document;
-            IMxDocument mxDoc = doc as IMxDocument;
-            int value = ArcMap.Application.hWnd;
 
-            IActiveView av = mxDoc.ActiveView as IActiveView;
-            IMap map = mxDoc.FocusMap as IMap;
+           // Nohe did this
+            //IDocument doc = ArcMap.Application.Document;
+            //IMxDocument mxDoc = doc as IMxDocument;
+            //int value = ArcMap.Application.hWnd;
+
+            //IActiveView av = mxDoc.ActiveView as IActiveView;
+            //IMap map = mxDoc.FocusMap as IMap;
+           
+           //frddie
+            IMap map = ArcMap.Document.ActiveView.FocusMap;
+            Type factoryType = Type.GetTypeFromProgID("esriDataSourcesGDB.FileGDBWorkspaceFactory");
+           
+           IWorkspaceFactory wsf = Activator.CreateInstance(factoryType) as IWorkspaceFactory;
+           //nohe
+            //IWorkspaceFactory wsf = new FileGDBWorkspaceFactory();
+            IFeatureWorkspace ws = wsf.OpenFromFile(@"C:\Users\alex7370\Documents\GitHub\MyAddins\AddingAFeature\features.gdb", 0) as IFeatureWorkspace;
+            IFeatureLayer featureLayer = new FeatureLayerClass { FeatureClass = ws.OpenFeatureClass("pointFeature")};
+            featureLayer.Name = featureLayer.FeatureClass.AliasName;
             
-            IWorkspaceFactory wsf = new FileGDBWorkspaceFactory();
-            IFeatureWorkspace ws = wsf.OpenFromFile("C:\\Users\\AlexanderN\\Documents\\GitHub\\MyAddins\\AddingAFeature\\features.gdb", value) as IFeatureWorkspace;
-            IFeatureLayer featureLayer = new FeatureLayerClass();
-            featureLayer.FeatureClass = ws.OpenFeatureClass("pointFeature");
-            ILayer layer = (ILayer)featureLayer;
-            layer.Name = featureLayer.FeatureClass.AliasName;
-            
-            map.AddLayer(layer);
-            av.Refresh();
-        }
-        protected override void OnUpdate()
-        {
-            Enabled = ArcMap.Application != null;
+            map.AddLayer(featureLayer);
+            ArcMap.Document.ActiveView.Refresh();
         }
     }
 
