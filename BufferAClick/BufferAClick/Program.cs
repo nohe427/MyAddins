@@ -9,6 +9,7 @@ namespace BufferAClick
     {
         /// <summary>
         /// The main entry point for the application.
+        // This is a comment
         /// </summary>
         [STAThread]
         static void Main()
