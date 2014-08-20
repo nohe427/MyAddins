@@ -34,6 +34,7 @@
             this.passwordTextBox = new System.Windows.Forms.TextBox();
             this.creditButton = new System.Windows.Forms.Button();
             this.creditListBox = new System.Windows.Forms.ListBox();
+            this.statusLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -87,11 +88,20 @@
             this.creditListBox.Size = new System.Drawing.Size(235, 199);
             this.creditListBox.TabIndex = 6;
             // 
+            // statusLabel
+            // 
+            this.statusLabel.AutoSize = true;
+            this.statusLabel.Location = new System.Drawing.Point(13, 330);
+            this.statusLabel.Name = "statusLabel";
+            this.statusLabel.Size = new System.Drawing.Size(0, 13);
+            this.statusLabel.TabIndex = 7;
+            // 
             // creidtConsumption
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(267, 358);
+            this.Controls.Add(this.statusLabel);
             this.Controls.Add(this.creditListBox);
             this.Controls.Add(this.creditButton);
             this.Controls.Add(this.passwordTextBox);
@@ -113,6 +123,7 @@
         private System.Windows.Forms.TextBox passwordTextBox;
         private System.Windows.Forms.Button creditButton;
         private System.Windows.Forms.ListBox creditListBox;
+        private System.Windows.Forms.Label statusLabel;
     }
 }
 

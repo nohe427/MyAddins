@@ -18,10 +18,15 @@ namespace CreditQuest
 
         private void creditButton_Click(object sender, EventArgs e)
         {
+            statusLabel.Text = "Working...";
             string username = usernameTextBoc.Text;
             string password = passwordTextBox.Text;
+            AGOL agol = new AGOL("anohe_ess5", "GeogWorks3!");
+            Console.WriteLine(agol.Username);
+            Console.WriteLine(agol.URLKey);
+            
 
-
+            statusLabel.Text = "Complete!";
         }
 
         
