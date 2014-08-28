@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ArcGIS defaultAssembly="ProAppModule3.dll" defaultNamespace="ProAppModule3" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS%20Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{7d1b1ada-e6c8-4130-9618-87c878eb5371}" version="1.0" desktopVersion="1.0.1368">
+    <Name>ProAppModule3</Name>
+    <Description>ProAppModule3 description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>alex7370</Author>
+    <Company>Acme</Company>
+    <Date>8/28/2014 2:28:13 PM, 2014</Date>
+  </AddInInfo>
+  <dependencies>
+    <!--<dependency name="ADCore.daml" />-->
+    <!--<dependency name="ADMapping.daml" />-->
+    <!--<dependency name="Editing.daml" />-->
+  </dependencies>
+  <categories></categories>
+  <!-- uncomment to add a key accelerator/short cut for the control -->
+  <accelerators>
+    <!--<insertAccelerator refID="Your_Control_Id_Here" flags="Ctrl" key="F1" />-->
+  </accelerators>
+  <modules>
+    <insertModule id="ProAppModule3_Module" className="Module1" autoLoad="false" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <tab id="ProAppModule3_Tab1" caption="Training">
+          <group refID="ProAppModule3_Group1"/>
+        </tab>
+      </tabs>
+      <tabGroups></tabGroups>
+      <toolbars></toolbars>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="ProAppModule3_Group1" caption="Group 1" appearsOnAddInTab="true">
+          <!-- host controls within groups -->
+          <button refID="ProAppModule3_Button1" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <button id="ProAppModule3_Button1" caption="Button 1" className="Button1" loadOnClick="true" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png" condition="esri_mapping_mapPane">
+          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        </button>
+      </controls>
+      <galleries></galleries>
+      <menus></menus>
+      <splitButtons></splitButtons>
+      <palettes></palettes>
+      <panes></panes>
+      <dockPanes></dockPanes>
+    </insertModule>
+  </modules>
+</ArcGIS>
