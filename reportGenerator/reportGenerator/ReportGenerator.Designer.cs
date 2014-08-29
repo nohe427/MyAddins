@@ -1,6 +1,6 @@
 ﻿namespace reportGenerator
 {
-    partial class Form1
+    partial class ReportGenerator
     {
         /// <summary>
         /// Required designer variable.
@@ -31,6 +31,9 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.businessSummaryCheckBox = new System.Windows.Forms.CheckBox();
+            this.census2010CheckBox = new System.Windows.Forms.CheckBox();
+            this.dandiCheckBox = new System.Windows.Forms.CheckBox();
             this.usernameLabel = new System.Windows.Forms.Label();
             this.usernameTextBox = new System.Windows.Forms.TextBox();
             this.passwordLabel = new System.Windows.Forms.Label();
@@ -41,9 +44,6 @@
             this.zipCodeTextBox = new System.Windows.Forms.TextBox();
             this.storageLocationLabel = new System.Windows.Forms.Label();
             this.storageLocationTextBox = new System.Windows.Forms.TextBox();
-            this.dandiCheckBox = new System.Windows.Forms.CheckBox();
-            this.census2010CheckBox = new System.Windows.Forms.CheckBox();
-            this.businessSummaryCheckBox = new System.Windows.Forms.CheckBox();
             this.statusStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -75,6 +75,36 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Reports";
+            // 
+            // businessSummaryCheckBox
+            // 
+            this.businessSummaryCheckBox.AutoSize = true;
+            this.businessSummaryCheckBox.Location = new System.Drawing.Point(7, 67);
+            this.businessSummaryCheckBox.Name = "businessSummaryCheckBox";
+            this.businessSummaryCheckBox.Size = new System.Drawing.Size(114, 17);
+            this.businessSummaryCheckBox.TabIndex = 2;
+            this.businessSummaryCheckBox.Text = "Business Summary";
+            this.businessSummaryCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // census2010CheckBox
+            // 
+            this.census2010CheckBox.AutoSize = true;
+            this.census2010CheckBox.Location = new System.Drawing.Point(7, 43);
+            this.census2010CheckBox.Name = "census2010CheckBox";
+            this.census2010CheckBox.Size = new System.Drawing.Size(114, 17);
+            this.census2010CheckBox.TabIndex = 1;
+            this.census2010CheckBox.Text = "Census 210 Profile";
+            this.census2010CheckBox.UseVisualStyleBackColor = true;
+            // 
+            // dandiCheckBox
+            // 
+            this.dandiCheckBox.AutoSize = true;
+            this.dandiCheckBox.Location = new System.Drawing.Point(7, 20);
+            this.dandiCheckBox.Name = "dandiCheckBox";
+            this.dandiCheckBox.Size = new System.Drawing.Size(180, 17);
+            this.dandiCheckBox.TabIndex = 0;
+            this.dandiCheckBox.Text = "Demographic and Income Profile";
+            this.dandiCheckBox.UseVisualStyleBackColor = true;
             // 
             // usernameLabel
             // 
@@ -127,6 +157,7 @@
             this.getReportsButton.TabIndex = 7;
             this.getReportsButton.Text = "Get Reports";
             this.getReportsButton.UseVisualStyleBackColor = true;
+            this.getReportsButton.Click += new System.EventHandler(this.getReportsButton_Click);
             // 
             // zipCodeLabel
             // 
@@ -160,37 +191,7 @@
             this.storageLocationTextBox.Size = new System.Drawing.Size(156, 20);
             this.storageLocationTextBox.TabIndex = 11;
             // 
-            // dandiCheckBox
-            // 
-            this.dandiCheckBox.AutoSize = true;
-            this.dandiCheckBox.Location = new System.Drawing.Point(7, 20);
-            this.dandiCheckBox.Name = "dandiCheckBox";
-            this.dandiCheckBox.Size = new System.Drawing.Size(180, 17);
-            this.dandiCheckBox.TabIndex = 0;
-            this.dandiCheckBox.Text = "Demographic and Income Profile";
-            this.dandiCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // census2010CheckBox
-            // 
-            this.census2010CheckBox.AutoSize = true;
-            this.census2010CheckBox.Location = new System.Drawing.Point(7, 43);
-            this.census2010CheckBox.Name = "census2010CheckBox";
-            this.census2010CheckBox.Size = new System.Drawing.Size(114, 17);
-            this.census2010CheckBox.TabIndex = 1;
-            this.census2010CheckBox.Text = "Census 210 Profile";
-            this.census2010CheckBox.UseVisualStyleBackColor = true;
-            // 
-            // businessSummaryCheckBox
-            // 
-            this.businessSummaryCheckBox.AutoSize = true;
-            this.businessSummaryCheckBox.Location = new System.Drawing.Point(7, 67);
-            this.businessSummaryCheckBox.Name = "businessSummaryCheckBox";
-            this.businessSummaryCheckBox.Size = new System.Drawing.Size(114, 17);
-            this.businessSummaryCheckBox.TabIndex = 2;
-            this.businessSummaryCheckBox.Text = "Business Summary";
-            this.businessSummaryCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // Form1
+            // ReportGenerator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -207,8 +208,8 @@
             this.Controls.Add(this.usernameLabel);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.statusStrip1);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "ReportGenerator";
+            this.Text = "Report Generator";
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
