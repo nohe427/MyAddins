@@ -16,6 +16,7 @@ namespace reportGenerator
         private string _urlKey;
         private string _username;
         private string _password;
+        public organizationInformation orgInfo;
 
 
         public string Token
@@ -62,7 +63,7 @@ namespace reportGenerator
             _username = UserName;
             _password = PassWord;
             _token = GetToken(UserName, PassWord);
-            _urlKey = _getOrgInfo(_token);
+            orgInfo = _getOrgInfo(_token);
         }
 
 
@@ -80,14 +81,14 @@ namespace reportGenerator
             return x.token; ;
         }
 
-        private string _getOrgInfo(string token)
+        private organizationInformation _getOrgInfo(string token)
         {
             var data = new NameValueCollection();
             data["token"] = token;
             data["f"] = "json";
 
             organizationInformation x = JsonConvert.DeserializeObject<organizationInformation>(_getResponse(data, "http://www.arcgis.com/sharing/rest/portals/self"));
-            return x.urlKey;
+            return x;
         }
 
         private string _getResponse(NameValueCollection data, string url)
