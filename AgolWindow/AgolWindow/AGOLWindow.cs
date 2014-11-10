@@ -56,5 +56,72 @@ namespace AgolWindow
             }
 
         }
+
+        private void loginButton_Click(object sender, EventArgs e)
+        {
+            windowStatusLabel.Text = "Logging in...";
+            string username = usernameTextBox.Text;
+            string password = passwordTextBox.Text;
+            try
+            {
+                AGOL agol = new AGOL(username, password);
+                windowStatusLabel.Text = agol.Token.ToString();
+                windowStatusLabel.Text = "Logged in!";
+
+                string orgInfoString;
+                windowStatusLabel.Text = "Getting organization information...";
+                orgInfoString = "";
+                orgInfoString += "Access: " + agol.orgInfo.access + "\n";
+                orgInfoString += "Available Credits: " + agol.orgInfo.availableCredits + "\n";
+                orgInfoString += "DatabaseUsage: " + agol.orgInfo.databaseUsage + "\n";
+                orgInfoString += "ID: " + agol.orgInfo.id + "\n";
+                orgInfoString += "Storage Usage: " + agol.orgInfo.storageUsage + "\n";
+                orgInfoString += "URL Key: " + agol.orgInfo.urlKey + "\n";
+                try
+                {
+                    if (agol.orgInfo.bingKey != "")
+                    {
+                        orgInfoString += "Bing Key: " + agol.orgInfo.bingKey + "\n";
+                        Console.WriteLine(agol.orgInfo.bingKey.ToString());
+                    }
+                    else
+                    {
+                        orgInfoString += "Bing Key: No bing key" + "\n";
+                    }
+                }
+                catch (NullReferenceException ex)
+                {
+                    orgInfoString += "Bing Key: No bing key" + "\n";
+                    windowStatusLabel.Text = ex.ToString();
+                }
+
+                orgInfoLabel.Text = orgInfoString;
+                
+                string finalServiceList;
+                finalServiceList = "";
+                int i=0;
+
+                foreach (var element in agol.orgServices.services)
+                {
+                    var linkLabel = new LinkLabel();
+                    linkLabel.Text = element.name + "\n";
+                    linkLabel.Links.Add(new LinkLabel.Link(i, element.url.Length, element.url));
+                    i = linkLabel.Text.Length;
+                    ServicesTab.Controls.Add(linkLabel);
+                    linkLabel.LinkClicked += (s, z) =>
+                        {
+                            System.Diagnostics.Process.Start(z.Link.LinkData.ToString());
+                        };
+                }
+
+                servicesLabel.Text = finalServiceList;
+
+                windowStatusLabel.Text = "Finished!";
+            }
+            catch (NullReferenceException ex)
+            {
+                windowStatusLabel.Text = "Log in failed";
+            }
+        }
     }
 }
