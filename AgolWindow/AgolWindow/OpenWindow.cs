@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Text;
 using System.IO;
+using ESRI.ArcGIS.esriSystem;
+using ESRI.ArcGIS.Framework;
 
 namespace AgolWindow
 {
@@ -16,7 +18,12 @@ namespace AgolWindow
             //
             //  TODO: Sample code showing how to access button host
             //
-            ArcMap.Application.CurrentTool = null;
+            UID dockWinID = new UIDClass();
+            dockWinID.Value = ThisAddIn.IDs.AGOLWindow;
+
+            // Use GetDockableWindow directly as we want the client IDockableWindow not the internal class  
+            IDockableWindow dockWindow = ArcMap.DockableWindowManager.GetDockableWindow(dockWinID);
+            dockWindow.Show(true);  
         }
         protected override void OnUpdate()
         {

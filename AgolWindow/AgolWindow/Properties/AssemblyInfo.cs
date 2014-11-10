@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("AgolWindow")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("Agol Window")]
+[assembly: AssemblyDescription("This is a window for ArcGIS Online Management.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Microsoft")]
-[assembly: AssemblyProduct("AgolWindow")]
-[assembly: AssemblyCopyright("Copyright © Microsoft 2014")]
+[assembly: AssemblyCompany("ESRI")]
+[assembly: AssemblyProduct("Agol Window")]
+[assembly: AssemblyCopyright("Copyright © Alexander Nohe 2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
