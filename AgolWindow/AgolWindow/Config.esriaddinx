@@ -2,7 +2,7 @@
   <Name>AgolWindow</Name>
   <AddInID>{0510eade-cebf-450b-aba7-35d62201b069}</AddInID>
   <Description>This is a dockable window that allows users to log in and manage their ArcGIS Online Subscription without going to the internet.</Description>
-  <Version>1.0</Version>
+  <Version>1.3</Version>
   <Image>Images\AgolWindow_1.png</Image>
   <Author>Alexander N</Author>
   <Company>ESRI</Company>
