@@ -17,6 +17,7 @@ namespace AgolWindow
         private string _password;
         public organizationInformation orgInfo;
         public Services orgServices;
+        public Users users;
 
 
         public string Token
@@ -57,6 +58,7 @@ namespace AgolWindow
             _token = GetToken(UserName, PassWord);
             orgInfo = _getOrgInfo(_token);
             orgServices = _getServices();
+            users = _getUsers();
         }
 
 
@@ -94,6 +96,37 @@ namespace AgolWindow
 
             Services x = JsonConvert.DeserializeObject<Services>(_getResponse(data, "http://services.arcgis.com/" + this.orgInfo.id + "/ArcGIS/rest/services"));
             return x;
+        }
+
+        private Users _getUsers()
+        {
+            var data = new NameValueCollection();
+            data["f"] = "pjson";
+            data["start"] = "1";
+            data["sortOrder"] = "asc";
+            data["num"] = "100";
+            data["sortField"] = "fullname";
+            data["token"] = this._token;
+            int nextStart;
+            Users z;
+            z = new Users();
+            nextStart = 1;
+            List<User> users = new List<User>();
+            while( nextStart != -1)
+            {
+                Users x = JsonConvert.DeserializeObject<Users>(_getResponse(data, "http://"+ this.orgInfo.urlKey +".maps.arcgis.com/sharing/rest/portals/self/users"));
+                z.num = x.num;
+                z.total = x.total;
+                foreach (User user in x.users)
+                {
+                    users.Add(user);
+                }
+                nextStart = x.nextStart;
+                data["start"] = x.nextStart.ToString();
+            }
+
+            z.users = users;
+            return z;
         }
 
         private string _getResponse(NameValueCollection data, string url)
@@ -185,6 +218,45 @@ namespace AgolWindow
         {
             public double currentVersion { get; set; }
             public List<Service> services { get; set; }
+        }
+
+        public class User
+        {
+            public string username { get; set; }
+            public string fullName { get; set; }
+            public string firstName { get; set; }
+            public string lastName { get; set; }
+            public string preferredView { get; set; }
+            public string description { get; set; }
+            public string email { get; set; }
+            public string userType { get; set; }
+            public object idpUsername { get; set; }
+            public object favGroupId { get; set; }
+            public object lastLogin { get; set; }
+            public bool validateUserProfile { get; set; }
+            public string access { get; set; }
+            //public long storageUsage { get; set; }
+           // public object storageQuota { get; set; }
+            public string orgId { get; set; }
+            public string role { get; set; }
+            public bool disabled { get; set; }
+            public List<object> tags { get; set; }
+            public object culture { get; set; }
+            public object region { get; set; }
+            public string units { get; set; }
+            public object thumbnail { get; set; }
+            public object created { get; set; }
+            public object modified { get; set; }
+            public List<object> groups { get; set; }
+        }
+
+        public class Users
+        {
+            public int total { get; set; }
+            public int start { get; set; }
+            public int num { get; set; }
+            public int nextStart { get; set; }
+            public List<User> users { get; set; }
         }
 
     }

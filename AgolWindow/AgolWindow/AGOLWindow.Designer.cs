@@ -34,15 +34,14 @@
             this.passwordTextBox = new System.Windows.Forms.TextBox();
             this.loginButton = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.ServicesTab = new System.Windows.Forms.TabPage();
+            this.orgPage = new System.Windows.Forms.TabPage();
+            this.servicesPage = new System.Windows.Forms.TabPage();
             this.orgInfoLabel = new System.Windows.Forms.Label();
-            this.servicesLabel = new System.Windows.Forms.Label();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.windowStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.usersPage = new System.Windows.Forms.TabPage();
             this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            this.ServicesTab.SuspendLayout();
+            this.orgPage.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -91,37 +90,37 @@
             // 
             // tabControl1
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.ServicesTab);
+            this.tabControl1.Controls.Add(this.orgPage);
+            this.tabControl1.Controls.Add(this.servicesPage);
+            this.tabControl1.Controls.Add(this.usersPage);
             this.tabControl1.Location = new System.Drawing.Point(6, 73);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(259, 416);
             this.tabControl1.TabIndex = 5;
             // 
-            // tabPage1
+            // orgPage
             // 
-            this.tabPage1.AutoScroll = true;
-            this.tabPage1.Controls.Add(this.orgInfoLabel);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(251, 390);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Organization Information";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.orgPage.AutoScroll = true;
+            this.orgPage.Controls.Add(this.orgInfoLabel);
+            this.orgPage.Location = new System.Drawing.Point(4, 22);
+            this.orgPage.Name = "orgPage";
+            this.orgPage.Padding = new System.Windows.Forms.Padding(3);
+            this.orgPage.Size = new System.Drawing.Size(251, 390);
+            this.orgPage.TabIndex = 0;
+            this.orgPage.Text = "Organization Information";
+            this.orgPage.UseVisualStyleBackColor = true;
             // 
-            // ServicesTab
+            // servicesPage
             // 
-            this.ServicesTab.AutoScroll = true;
-            this.ServicesTab.Controls.Add(this.servicesLabel);
-            this.ServicesTab.Location = new System.Drawing.Point(4, 22);
-            this.ServicesTab.Name = "ServicesTab";
-            this.ServicesTab.Padding = new System.Windows.Forms.Padding(3);
-            this.ServicesTab.Size = new System.Drawing.Size(251, 390);
-            this.ServicesTab.TabIndex = 1;
-            this.ServicesTab.Text = "Services";
-            this.ServicesTab.UseVisualStyleBackColor = true;
+            this.servicesPage.AutoScroll = true;
+            this.servicesPage.Location = new System.Drawing.Point(4, 22);
+            this.servicesPage.Name = "servicesPage";
+            this.servicesPage.Padding = new System.Windows.Forms.Padding(3);
+            this.servicesPage.Size = new System.Drawing.Size(251, 390);
+            this.servicesPage.TabIndex = 1;
+            this.servicesPage.Text = "REST Services";
+            this.servicesPage.UseVisualStyleBackColor = true;
             // 
             // orgInfoLabel
             // 
@@ -131,15 +130,6 @@
             this.orgInfoLabel.Size = new System.Drawing.Size(236, 13);
             this.orgInfoLabel.TabIndex = 0;
             this.orgInfoLabel.Text = "Information will appear here after you login.";
-            // 
-            // servicesLabel
-            // 
-            this.servicesLabel.AutoSize = true;
-            this.servicesLabel.Location = new System.Drawing.Point(4, 7);
-            this.servicesLabel.Name = "servicesLabel";
-            this.servicesLabel.Size = new System.Drawing.Size(74, 13);
-            this.servicesLabel.TabIndex = 0;
-            this.servicesLabel.Text = "Please Log In";
             // 
             // statusStrip1
             // 
@@ -157,6 +147,16 @@
             this.windowStatusLabel.Size = new System.Drawing.Size(35, 17);
             this.windowStatusLabel.Text = "Idle...";
             // 
+            // usersPage
+            // 
+            this.usersPage.AutoScroll = true;
+            this.usersPage.Location = new System.Drawing.Point(4, 22);
+            this.usersPage.Name = "usersPage";
+            this.usersPage.Size = new System.Drawing.Size(251, 390);
+            this.usersPage.TabIndex = 2;
+            this.usersPage.Text = "Users";
+            this.usersPage.UseVisualStyleBackColor = true;
+            // 
             // AGOLWindow
             // 
             this.AutoScroll = true;
@@ -172,10 +172,8 @@
             this.Name = "AGOLWindow";
             this.Size = new System.Drawing.Size(273, 519);
             this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
-            this.ServicesTab.ResumeLayout(false);
-            this.ServicesTab.PerformLayout();
+            this.orgPage.ResumeLayout(false);
+            this.orgPage.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -191,12 +189,12 @@
         private System.Windows.Forms.TextBox passwordTextBox;
         private System.Windows.Forms.Button loginButton;
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage ServicesTab;
+        private System.Windows.Forms.TabPage orgPage;
+        private System.Windows.Forms.TabPage servicesPage;
         private System.Windows.Forms.Label orgInfoLabel;
-        private System.Windows.Forms.Label servicesLabel;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel windowStatusLabel;
+        private System.Windows.Forms.TabPage usersPage;
 
     }
 }

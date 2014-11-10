@@ -62,8 +62,8 @@ namespace AgolWindow
             windowStatusLabel.Text = "Logging in...";
             string username = usernameTextBox.Text;
             string password = passwordTextBox.Text;
-            try
-            {
+         //   try
+        //    {
                 AGOL agol = new AGOL(username, password);
                 windowStatusLabel.Text = agol.Token.ToString();
                 windowStatusLabel.Text = "Logged in!";
@@ -77,6 +77,7 @@ namespace AgolWindow
                 orgInfoString += "ID: " + agol.orgInfo.id + "\n";
                 orgInfoString += "Storage Usage: " + agol.orgInfo.storageUsage + "\n";
                 orgInfoString += "URL Key: " + agol.orgInfo.urlKey + "\n";
+                orgInfoString += "Token: " + agol.Token + "\n";
                 try
                 {
                     if (agol.orgInfo.bingKey != "")
@@ -96,32 +97,61 @@ namespace AgolWindow
                 }
 
                 orgInfoLabel.Text = orgInfoString;
-                
-                string finalServiceList;
-                finalServiceList = "";
+
+                windowStatusLabel.Text = "Logged in!";
+
                 int i=0;
+                int yi = 30;
+                int y = 7;
+                int x = 2;
 
                 foreach (var element in agol.orgServices.services)
                 {
+                    windowStatusLabel.Text = "Addomg service: " + element.name;
                     var linkLabel = new LinkLabel();
+                    linkLabel.Name = element.name;
                     linkLabel.Text = element.name + "\n";
-                    linkLabel.Links.Add(new LinkLabel.Link(i, element.url.Length, element.url));
-                    i = linkLabel.Text.Length;
-                    ServicesTab.Controls.Add(linkLabel);
+                    linkLabel.Location = new Point(x, y);
+                    linkLabel.AutoSize = true;
+                    linkLabel.Links.Add(new LinkLabel.Link(i, element.name.Length, element.url));
+                    servicesPage.Controls.Add(linkLabel);
                     linkLabel.LinkClicked += (s, z) =>
                         {
-                            System.Diagnostics.Process.Start(z.Link.LinkData.ToString());
+                           System.Diagnostics.Process.Start(z.Link.LinkData.ToString());
                         };
+
+                    y += yi;
+
+                    //finalServiceList += element.name + "\n";
                 }
 
-                servicesLabel.Text = finalServiceList;
-
                 windowStatusLabel.Text = "Finished!";
-            }
-            catch (NullReferenceException ex)
-            {
-                windowStatusLabel.Text = "Log in failed";
-            }
+
+                i = 0;
+                yi = 30;
+                y = 7;
+                x = 2;
+
+                foreach (var user in agol.users.users)
+                {
+                    var label = new Label();
+                    label.Text = user.username;
+                    label.Location = new Point(x, y);
+                    label.AutoSize = true;
+                    usersPage.Controls.Add(label);
+                    y += yi;
+
+                }
+
+      //      }
+        //    catch (NullReferenceException ex)
+       //     {
+       //         windowStatusLabel.Text = "Log in failed";
+       //     }
+
+
+
+
         }
     }
 }
