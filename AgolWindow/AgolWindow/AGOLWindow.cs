@@ -80,7 +80,7 @@ namespace AgolWindow
                 orgInfoString += "Token: " + agol.Token + "\n";
                 try
                 {
-                    if (agol.orgInfo.bingKey != "")
+                    if (agol.orgInfo.bingKey != null)
                     {
                         orgInfoString += "Bing Key: " + agol.orgInfo.bingKey + "\n";
                         Console.WriteLine(agol.orgInfo.bingKey.ToString());
