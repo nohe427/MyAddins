@@ -138,7 +138,13 @@ namespace AgolWindow
                     label.Text = user.username;
                     label.Location = new Point(x, y);
                     label.AutoSize = true;
+                    int w = label.Size.Width + 1;
+                    var label1 = new Label();
+                    label1.Text = user.role;
+                    label1.Location = new Point(x + w, y);
+                    label1.AutoSize = true;
                     usersPage.Controls.Add(label);
+                    usersPage.Controls.Add(label1);
                     y += yi;
 
                 }
