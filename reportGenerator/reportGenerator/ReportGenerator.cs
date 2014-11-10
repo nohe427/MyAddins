@@ -41,7 +41,7 @@ namespace reportGenerator
                 token = agol.Token;
                 Console.WriteLine(token);
                 toolStripStatusLabel1.Text = "Token generated... Login success!";
-                Console.WriteLine(agol.orgInfo.id);
+                Console.WriteLine(agol.orgInfo.availableCredits);
             }
         }
 

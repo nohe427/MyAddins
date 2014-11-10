@@ -1,13 +1,22 @@
 import arcpy
 import pythonaddins
+import webbrowser
+import functools
+import threading
+import os
 
-class ButtonClass16(object):
-    """Implementation for RemoveData_addin.button_1 (Button)"""
-    def __init__(self):
-        self.enabled = True
-        self.checked = False
-    def onClick(self):
-        pass
+def run_in_other_thread(function):
+    # functool.wraps will copy over the docstring and some other metadata
+    # from the original function
+    @functools.wraps(function)
+    def fn_(*args, **kwargs):
+        thread = threading.Thread(target=function, args=args, kwargs=kwargs)
+        thread.start()
+        thread.join()
+    return fn_
+
+startfile = run_in_other_thread(os.startfile)
+openbrowser = run_in_other_thread(webbrowser.open)
 
 class ButtonClass6(object):
     """Implementation for RemoveData_addin.button (Button)"""
@@ -15,12 +24,12 @@ class ButtonClass6(object):
         self.enabled = True
         self.checked = False
     def onClick(self):
-        pass
+        openbrowser(r"http://arcgis.com")
 
 class ComboBoxClass5(object):
     """Implementation for RemoveData_addin.combobox (ComboBox)"""
     def __init__(self):
-        self.items = ["item1", "item2"]
+        self.items = ["item1", "item2", "item3"]
         self.editable = True
         self.enabled = True
         self.dropdownWidth = 'WWWWWW'
@@ -34,7 +43,7 @@ class ComboBoxClass5(object):
     def onEnter(self):
         pass
     def refresh(self):
-        pass
+        self.items = []
 
 class DataDelete(object):
     """Implementation for RemoveData_addin.extension2 (Extension)"""

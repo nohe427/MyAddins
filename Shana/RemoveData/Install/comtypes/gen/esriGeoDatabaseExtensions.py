@@ -1,0 +1,3 @@
+from comtypes.gen import _7BA654FE_F55E_4EE5_8CF2_FAEFFBC04A61_0_10_2
+globals().update(_7BA654FE_F55E_4EE5_8CF2_FAEFFBC04A61_0_10_2.__dict__)
+__name__ = 'comtypes.gen.esriGeoDatabaseExtensions'

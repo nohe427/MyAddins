@@ -13,7 +13,6 @@ namespace reportGenerator
     class AGOL
     {
         private string _token;
-        private string _urlKey;
         private string _username;
         private string _password;
         public organizationInformation orgInfo;
@@ -24,14 +23,6 @@ namespace reportGenerator
             get
             {
                 return _token;
-            }
-        }
-
-        public string URLKey
-        {
-            get
-            {
-                return _urlKey;
             }
         }
 

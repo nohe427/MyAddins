@@ -1,0 +1,3 @@
+from comtypes.gen import _28ED84CD_FB06_41A0_9A55_E196441D169A_0_10_2
+globals().update(_28ED84CD_FB06_41A0_9A55_E196441D169A_0_10_2.__dict__)
+__name__ = 'comtypes.gen.esriDataSourcesNetCDF'

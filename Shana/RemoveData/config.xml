@@ -1,13 +1,40 @@
-<ESRI.Configuration xmlns="http://schemas.esri.com/Desktop/AddIns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Name>RemoveData</Name><AddInID>{35d831f9-e15c-429e-ba40-ab6ceee46631}</AddInID><Description>This removes all data in the MXD upon closing.</Description><Version>0.1</Version><Image /><Author>Alexander P Nohe</Author><Company>ESRI</Company><Date>08/29/2014</Date><Targets><Target name="Desktop" version="10.2" /></Targets><AddIn language="PYTHON" library="RemoveData_addin.py" namespace="RemoveData_addin"><ArcMap>
+<ESRI.Configuration xmlns="http://schemas.esri.com/Desktop/AddIns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>RemoveData</Name>
+	<AddInID>{35d831f9-e15c-429e-ba40-ab6ceee46631}</AddInID>
+	<Description>This removes all data in the MXD upon closing.</Description>
+	<Version>0.1</Version>
+	<Image />
+	<Author>Alexander P Nohe</Author>
+	<Company>ESRI</Company>
+	<Date>11/06/2014</Date>
+	<Targets>
+		<Target name="Desktop" version="10.2" />
+	</Targets>
+
+<AddIn language="CLR4.0" library="ArcMapAddin6.dll" namespace="ArcMapAddin6">
+    <ArcMap>
+      <Commands>
+        <Button id="ArcMapAddin6_PointAdd" class="PointAdd" message="PointAdd" caption="PointAdd" tip="PointAdd" category="PointAdd" />
+      </Commands>
+    </ArcMap>
+  </AddIn>
+
+<AddIn language="PYTHON" library="RemoveData_addin.py" namespace="RemoveData_addin"><ArcMap>
     <Commands>
         <ComboBox caption="ComboBox" category="RemoveData" class="ComboBoxClass5" id="RemoveData_addin.combobox" itemSizeString="WWWWWW" message="" rows="4" sizeString="WWWWWW" tip=""><Help heading="" /></ComboBox>
         <Button caption="Button" category="RemoveData" class="ButtonClass6" id="RemoveData_addin.button" image="" message="" tip=""><Help heading="" /></Button>
+        <Button caption="Button" category="RemoveData" class="ButtonClass16" id="RemoveData_addin.button_1" image="" message="" tip=""><Help heading="" /></Button>
         </Commands>
     <Extensions>
         <Extension autoLoad="true" category="RemoveData" class="DataDelete" description="" id="RemoveData_addin.extension2" name="DataDelete" productName="DataDelete" showInExtensionDialog="true" />
         </Extensions>
     <Toolbars>
-        <Toolbar caption="Toolbar" category="RemoveData" id="RemoveData_addin.toolbar" showInitially="true"><Items><ComboBox refID="RemoveData_addin.combobox" /><Button refID="RemoveData_addin.button" /></Items></Toolbar>
+        <Toolbar caption="Toolbar" category="RemoveData" id="RemoveData_addin.toolbar" showInitially="true">
+        	<Items><ComboBox refID="RemoveData_addin.combobox" />
+        	<Button refID="RemoveData_addin.button" />
+        	<Button refID="RemoveData_addin.button_1" />
+        	<Button refID="ArcMapAddin6_PointAdd" />
+        </Items></Toolbar>
         </Toolbars>
     <Menus>
         </Menus>
