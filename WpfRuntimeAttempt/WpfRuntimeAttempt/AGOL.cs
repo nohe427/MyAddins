@@ -138,6 +138,19 @@ namespace WpfRuntimeAttempt
             return responseData;
         }
 
+        public void FirstVisit(string url)
+        {
+            var data = new NameValueCollection();
+            data["token"] = this.Token;
+            data["f"] = "json";
+
+            string responseData;
+            var webClient = new WebClient();
+            var response = webClient.UploadValues(url, data);
+            responseData = System.Text.Encoding.UTF8.GetString(response);
+            //return responseData;
+        }
+
         //Classes created from the JSON
 
         public class TokenInfo

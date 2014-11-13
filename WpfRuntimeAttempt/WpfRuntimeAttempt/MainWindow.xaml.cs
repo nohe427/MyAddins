@@ -31,7 +31,7 @@ namespace WpfRuntimeAttempt
             string password = Password.Text;
 
             AGOL agol = new AGOL(username, password);
-
+            Console.WriteLine(agol.Token);
             int i;
             i = 0;
             foreach(var service in agol.orgServices.services)
@@ -41,9 +41,10 @@ namespace WpfRuntimeAttempt
                 box.Content = service.name;
                 box.Checked += async(s,ev) =>
                     {
+                        agol.FirstVisit(service.url);
                         //Having trouble with the token
                         var table = new Esri.ArcGISRuntime.Data.ServiceFeatureTable();
-                        //table.Token = agol.Token;
+                        table.Token = agol.Token.ToString();
                         //MessageBox.Show(agol.Token);
                         table.ServiceUri = service.url+"/0";
                         table.Where = "1=1";
