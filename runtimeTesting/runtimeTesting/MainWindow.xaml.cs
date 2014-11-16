@@ -128,7 +128,7 @@ namespace runtimeTesting
 
         private void licenseMe()
         {
-            Esri.ArcGISRuntime.ArcGISRuntimeEnvironment.ClientId = "ciHWrisysP1SYFMI";
+            Esri.ArcGISRuntime.ArcGISRuntimeEnvironment.ClientId = "";
 
             try
             {
