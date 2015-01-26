@@ -72,7 +72,7 @@ namespace Alarms
                 //Getting the alarm time.
                 string alarmTime = _alarms.GetAlarm(alarmsListBox.SelectedIndex);
                 DateTime time = DateTime.Parse(alarmTime);
-                int hour = int.Parse(time.ToString("hh"));
+                int hour = int.Parse(time.ToString("HH"));
                 int minutes = int.Parse(time.ToString("mm"));
 
                 //Getting the alarm category.
