@@ -27,6 +27,7 @@ namespace Alarms
         {
             //Enabling the timer for the current time.
             alarmTimer.Enabled = true;
+            timeLabel.Text = DateTime.Now.ToLongTimeString();
 
             //Loading any data that might be saved.
             _alarms.LoadAlarmsFromFile(dataPath);
