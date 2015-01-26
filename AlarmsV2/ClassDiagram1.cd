@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="Alarms.Alarm">
+    <Position X="6.5" Y="5.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAIAAIAAAABAAAAAgAAAQEAAQAAAAAAA=</HashCode>
+      <FileName>Alarm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Alarms.AlarmForm">
+    <Position X="13.5" Y="1.75" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>AABCEAgAACQAAAADCACAACACAAAAEgAAAABQAAASBAA=</HashCode>
+      <FileName>AlarmForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Alarms.Alarms">
+    <Position X="6.5" Y="0.5" Width="5.25" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Alarms.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Alarms.MainForm">
+    <Position X="0.5" Y="0.5" Width="4.75" />
+    <TypeIdentifier>
+      <HashCode>ABBEAAoABCAAgEAAIACABAACCYAACAAAgAAgAAAAAEU=</HashCode>
+      <FileName>MainForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Alarms.Program">
+    <Position X="24" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Alarms.Properties.Resources">
+    <Position X="22.25" Y="0.5" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Alarms.Properties.Settings">
+    <Position X="21.75" Y="3.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

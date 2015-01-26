@@ -27,6 +27,7 @@ namespace WpfRuntimeAttempt
 
         private void logonButton_Click(object sender, RoutedEventArgs e)
         {
+
             string username = Username.Text;
             string password = Password.Text;
 
