@@ -30,6 +30,7 @@ namespace Alarms
             timeLabel.Text = DateTime.Now.ToLongTimeString();
 
             //Loading any data that might be saved.
+            using (StreamWriter w = File.AppendText(dataPath));
             _alarms.LoadAlarmsFromFile(dataPath);
             refreshAlarmsList();
         }
