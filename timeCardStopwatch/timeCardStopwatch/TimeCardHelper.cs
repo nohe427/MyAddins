@@ -160,6 +160,7 @@ namespace timeCardStopwatch
             if (totalTime.Hours == 8)
             {
                 totalTimeLabel.BackColor = System.Drawing.Color.Green;
+                totalTimeLabel.ForeColor = System.Drawing.Color.White;
             }
         }
 
@@ -168,14 +169,14 @@ namespace timeCardStopwatch
             StopAllStopWatches();
             MessageBox.Show("TE0352: " + meetingLabel.Text +
                 "\nTE0353: " + collaborationLabel.Text +
-                "\n DTEXT: " + String.Format("{0:00}:{1:00}:{2:00}", tsCasesDTEXT.Hours, tsCasesDTEXT.Minutes, tsCasesDTEXT.Seconds) +
-                "\n tsCasesPremiumInternationalDTEXT: " + String.Format("{0:00}:{1:00}:{2:00}", tsCasesPremiumInternationalDTEXT.Hours, tsCasesPremiumInternationalDTEXT.Minutes, tsCasesPremiumInternationalDTEXT.Seconds) +
-                "\n tsCasesInternationalDTEXT: " + String.Format("{0:00}:{1:00}:{2:00}", tsCasesInternationalDTEXT.Hours, tsCasesInternationalDTEXT.Minutes, tsCasesInternationalDTEXT.Seconds) +
-                "\n tsCasesPremiumDTEXT: " + String.Format("{0:00}:{1:00}:{2:00}", tsCasesPremiumDTEXT.Hours, tsCasesPremiumDTEXT.Minutes, tsCasesPremiumDTEXT.Seconds) +
-                "\n tsCasesDT: " + String.Format("{0:00}:{1:00}:{2:00}", tsCasesDT.Hours, tsCasesDT.Minutes, tsCasesDT.Seconds) +
-                "\n tsCasesPremiumDT: " + String.Format("{0:00}:{1:00}:{2:00}", tsCasesPremiumDT.Hours, tsCasesPremiumDT.Minutes, tsCasesPremiumDT.Seconds) +
-                "\n tsCasesIntDT: " + String.Format("{0:00}:{1:00}:{2:00}", tsCasesIntDT.Hours, tsCasesIntDT.Minutes, tsCasesIntDT.Seconds) +
-                "\n tsCasesPremiumIntDT: " + String.Format("{0:00}:{1:00}:{2:00}", tsCasesPremiumIntDT.Hours, tsCasesPremiumIntDT.Minutes, tsCasesPremiumIntDT.Seconds) +
+                "\n C04550M0101: " + String.Format("{0:00}:{1:00}:{2:00}", tsCasesDTEXT.Hours, tsCasesDTEXT.Minutes, tsCasesDTEXT.Seconds) +
+                "\n C04558M0101: " + String.Format("{0:00}:{1:00}:{2:00}", tsCasesPremiumInternationalDTEXT.Hours, tsCasesPremiumInternationalDTEXT.Minutes, tsCasesPremiumInternationalDTEXT.Seconds) +
+                "\n C04552M0101: " + String.Format("{0:00}:{1:00}:{2:00}", tsCasesInternationalDTEXT.Hours, tsCasesInternationalDTEXT.Minutes, tsCasesInternationalDTEXT.Seconds) +
+                "\n C04552M0101: " + String.Format("{0:00}:{1:00}:{2:00}", tsCasesPremiumDTEXT.Hours, tsCasesPremiumDTEXT.Minutes, tsCasesPremiumDTEXT.Seconds) +
+                "\n C04550M0100: " + String.Format("{0:00}:{1:00}:{2:00}", tsCasesDT.Hours, tsCasesDT.Minutes, tsCasesDT.Seconds) +
+                "\n C04552M0100: " + String.Format("{0:00}:{1:00}:{2:00}", tsCasesPremiumDT.Hours, tsCasesPremiumDT.Minutes, tsCasesPremiumDT.Seconds) +
+                "\n C04551M0100: " + String.Format("{0:00}:{1:00}:{2:00}", tsCasesIntDT.Hours, tsCasesIntDT.Minutes, tsCasesIntDT.Seconds) +
+                "\n C04558M0100: " + String.Format("{0:00}:{1:00}:{2:00}", tsCasesPremiumIntDT.Hours, tsCasesPremiumIntDT.Minutes, tsCasesPremiumIntDT.Seconds) +
 
                 "\n\n Total Time: " + totalTimeLabel.Text);
         }
