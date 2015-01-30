@@ -58,13 +58,13 @@ namespace timeCardStopwatch
             {
                 StopAllStopWatches();
                 stopwatchCasesPremiumInternationalDTEXT.Start();
-                timerToolStripStatusLabel.Text = "Currently Running Timer: Premium Internation Desktop Extensions";
+                timerToolStripStatusLabel.Text = "Currently Running Timer: Premium International Desktop Extensions";
             }
             else if (premiumCheckBox.Checked == false && internationalCheckBox.Checked == true && caseComboBox.SelectedItem.ToString() == "Desktop Extensions")
             {
                 StopAllStopWatches();
                 stopwatchCasesInternationalDTEXT.Start();
-                timerToolStripStatusLabel.Text = "Currently Running Timer: Internation Desktop Extensions";
+                timerToolStripStatusLabel.Text = "Currently Running Timer: International Desktop Extensions";
             }
             else if (premiumCheckBox.Checked == true && internationalCheckBox.Checked == false && caseComboBox.SelectedItem.ToString() == "Desktop Extensions")
             {
@@ -88,13 +88,13 @@ namespace timeCardStopwatch
             {
                 StopAllStopWatches();
                 stopwatchCasesInternationalDT.Start();
-                timerToolStripStatusLabel.Text = "Currently Running Timer: Internation Desktop";
+                timerToolStripStatusLabel.Text = "Currently Running Timer: International Desktop";
             }
             else if (premiumCheckBox.Checked == true && internationalCheckBox.Checked == true && caseComboBox.SelectedItem.ToString() == "Desktop")
             {
                 StopAllStopWatches();
                 stopwatchCasesPremiumInternationalDT.Start();
-                timerToolStripStatusLabel.Text = "Currently Running Timer: Premium Internation Desktop";
+                timerToolStripStatusLabel.Text = "Currently Running Timer: Premium International Desktop";
             }
             else if (premiumCheckBox.Checked == true && internationalCheckBox.Checked == false && caseComboBox.SelectedItem.ToString() == "Desktop")
             {
@@ -144,7 +144,7 @@ namespace timeCardStopwatch
 
             TimeSpan totalTime = tsCasesPremiumInternationalDTEXT + tsCasesInternationalDTEXT + tsCasesPremiumDTEXT + tsCasesDTEXT
                 + tsCasesDT + tsCasesPremiumDT + tsCasesIntDT + tsCasesPremiumIntDT + tsMeetings + tsCollaboration;
-            
+
             caseLabel.Text = String.Format("{0:00}:{1:00}:{2:00}",
             totalSpanCases.Hours, totalSpanCases.Minutes, totalSpanCases.Seconds);
 
@@ -156,7 +156,7 @@ namespace timeCardStopwatch
 
             totalTimeLabel.Text = String.Format("{0:00}:{1:00}:{2:00}",
             totalTime.Hours, totalTime.Minutes, totalTime.Seconds);
-            
+
             if (totalTime.Hours == 8)
             {
                 totalTimeLabel.BackColor = System.Drawing.Color.Green;
@@ -187,7 +187,7 @@ namespace timeCardStopwatch
             timerToolStripStatusLabel.Text = "On Lunch / break";
         }
 
-        
+
 
     }
 }
