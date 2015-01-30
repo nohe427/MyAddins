@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{47491115-B51D-4DFD-A775-4EEE3834F720}</ProjectGuid>
+    <ProjectGuid>{6288A90D-4916-4600-B43B-1526D88CF68F}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DocExplorer</RootNamespace>
-    <AssemblyName>DocExplorer</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <RootNamespace>timeCardStopwatch</RootNamespace>
+    <AssemblyName>timeCardStopwatch</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -44,16 +44,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FileBrowser.cs">
+    <Compile Include="TimeCardHelper.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FileBrowser.Designer.cs">
-      <DependentUpon>FileBrowser.cs</DependentUpon>
+    <Compile Include="TimeCardHelper.Designer.cs">
+      <DependentUpon>TimeCardHelper.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FileBrowser.resx">
-      <DependentUpon>FileBrowser.cs</DependentUpon>
+    <EmbeddedResource Include="TimeCardHelper.resx">
+      <DependentUpon>TimeCardHelper.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

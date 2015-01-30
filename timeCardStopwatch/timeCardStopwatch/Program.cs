@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace DocExplorer
+namespace timeCardStopwatch
 {
     static class Program
     {
@@ -16,7 +16,7 @@ namespace DocExplorer
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FileBrowser());
+            Application.Run(new TimeCardHelper());
         }
     }
 }

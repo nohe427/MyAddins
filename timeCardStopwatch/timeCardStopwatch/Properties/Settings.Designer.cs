@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DocExplorer.Properties
+namespace timeCardStopwatch.Properties
 {
 
 

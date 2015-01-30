@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("DocExplorer")]
+[assembly: AssemblyTitle("timeCardStopwatch")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("DocExplorer")]
+[assembly: AssemblyProduct("timeCardStopwatch")]
 [assembly: AssemblyCopyright("Copyright ©  2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("80642474-ab93-4eed-bca9-9b7e4c920098")]
+[assembly: Guid("cd6ff930-01f4-4c7f-bb26-6b763f93079a")]
 
 // Version information for an assembly consists of the following four values:
 //
