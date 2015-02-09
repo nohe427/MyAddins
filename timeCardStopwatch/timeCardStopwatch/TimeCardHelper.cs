@@ -35,32 +35,56 @@ namespace timeCardStopwatch
             string part2 = "";
             if (premiumCheckBox.Checked == true && internationalCheckBox.Checked == true)
             {
-                part1 = "Premium Int ";
+                part1 = "C04573";
             }
             else if (premiumCheckBox.Checked == false && internationalCheckBox.Checked == true)
             {
-                part1 = "Int ";
+                part1 = "C04571";
             }
             else if (premiumCheckBox.Checked == true && internationalCheckBox.Checked == false)
             {
-                part1 = "Premiun ";
+                part1 = "C04572";
             }
             else if (premiumCheckBox.Checked == false && internationalCheckBox.Checked == false)
             {
-                part1 = "Domestic ";
+                part1 = "C04570";
             }
 
             if (caseComboBox.SelectedItem.ToString() == "Desktop Extensions")
             {
-                part2 = "Desktop Extensions";
+                part2 = "M0101";
             }
             else if (caseComboBox.SelectedItem.ToString() == "Desktop")
             {
-                part2 = "Desktop";
+                part2 = "M0100";
             }
             else if (caseComboBox.SelectedItem.ToString() == "ArcGIS Online")
             {
-                part2 = "ArcGIS Online";
+                part2 = "M0125";
+            }
+            else if (caseComboBox.SelectedItem.ToString() == "Raster")
+            {
+                part2 = "M0114";
+            }
+            else if (caseComboBox.SelectedItem.ToString() == "Mobile")
+            {
+                part2 = "M0104";
+            }
+            else if (caseComboBox.SelectedItem.ToString() == "SDK")
+            {
+                part2 = "M0116";
+            }
+            else if (caseComboBox.SelectedItem.ToString() == "ArcGIS Server")
+            {
+                part2 = "M0121";
+            }
+            else if (caseComboBox.SelectedItem.ToString() == "Implementation")
+            {
+                part2 = "M0133";
+            }
+            else if (caseComboBox.SelectedItem.ToString() == "Geodata")
+            {
+                part2 = "M0112";
             }
             string timerCalled = part1 + part2;
             timers.SwitchActiveTimer(timerCalled);
@@ -69,13 +93,13 @@ namespace timeCardStopwatch
 
         private void collaborationButton_Click(object sender, EventArgs e)
         {
-            timers.SwitchActiveTimer("Collaboration");
+            timers.SwitchActiveTimer("TE0353");
             timerToolStripStatusLabel.Text = "Currently Running Timer: Collaboration";
         }
 
         private void meetingButton_Click(object sender, EventArgs e)
         {
-            timers.SwitchActiveTimer("Meetings");
+            timers.SwitchActiveTimer("TE0351");
             timerToolStripStatusLabel.Text = "Currently Running Timer: Meetings";
         }
 
@@ -84,12 +108,18 @@ namespace timeCardStopwatch
             caseComboBox.Items.Add("Desktop");
             caseComboBox.Items.Add("Desktop Extensions");
             caseComboBox.Items.Add("ArcGIS Online");
+            caseComboBox.Items.Add("Raster");
+            caseComboBox.Items.Add("Mobile");
+            caseComboBox.Items.Add("SDK");
+            caseComboBox.Items.Add("ArcGIS Server");
+            caseComboBox.Items.Add("Implementation");
+            caseComboBox.Items.Add("Geodata");
             caseComboBox.SelectedIndex = caseComboBox.FindString("Desktop");
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            
+
             if(timers.TimersActive.Exists(x => x.Name == "Meetings"))
             {
                 tsMeetings = timers.TimersActive.Find(x => x.Name == "Meetings").Stopwatch.Elapsed;
@@ -102,7 +132,7 @@ namespace timeCardStopwatch
             totalSpanCases = timers.CaseTime();
 
             totalTime = timers.AllTimes();
-            
+
             caseLabel.Text = String.Format("{0:00}:{1:00}:{2:00}",
             totalSpanCases.Hours, totalSpanCases.Minutes, totalSpanCases.Seconds);
 
