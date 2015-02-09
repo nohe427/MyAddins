@@ -120,13 +120,13 @@ namespace timeCardStopwatch
         private void timer1_Tick(object sender, EventArgs e)
         {
 
-            if(timers.TimersActive.Exists(x => x.Name == "Meetings"))
+            if(timers.TimersActive.Exists(x => x.Name == "TE0351"))
             {
-                tsMeetings = timers.TimersActive.Find(x => x.Name == "Meetings").Stopwatch.Elapsed;
+                tsMeetings = timers.TimersActive.Find(x => x.Name == "TE0351").Stopwatch.Elapsed;
             }
-            if (timers.TimersActive.Exists(x => x.Name == "Collaboration"))
+            if (timers.TimersActive.Exists(x => x.Name == "TE0353"))
             {
-                tsCollaboration = timers.TimersActive.Find(x => x.Name == "Collaboration").Stopwatch.Elapsed;
+                tsCollaboration = timers.TimersActive.Find(x => x.Name == "TE0353").Stopwatch.Elapsed;
             }
 
             totalSpanCases = timers.CaseTime();

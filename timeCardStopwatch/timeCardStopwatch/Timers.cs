@@ -10,7 +10,7 @@ namespace timeCardStopwatch
     {
         private List<Timer> _timersActive = new List<Timer>();
 
-        public List<Timer> TimersActive 
+        public List<Timer> TimersActive
         {
             get
             {
@@ -73,7 +73,7 @@ namespace timeCardStopwatch
             TimeSpan totalSpanCases = new TimeSpan(0,0,0);
             foreach (Timer timer in this._timersActive)
             {
-                if ((timer.Name != "Collaboration") && (timer.Name != "Meetings"))
+                if ((timer.Name != "TE0353") && (timer.Name != "TE0351"))
                 {
                     totalSpanCases += timer.Stopwatch.Elapsed;
                 }
