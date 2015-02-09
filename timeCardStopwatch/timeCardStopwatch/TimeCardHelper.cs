@@ -18,44 +18,30 @@ namespace timeCardStopwatch
             InitializeComponent();
         }
 
-        Stopwatch stopwatchCollaboration = new Stopwatch();
-        Stopwatch stopwatchMeetings = new Stopwatch();
-        Stopwatch stopwatchCasesDomesticDT = new Stopwatch();
-        Stopwatch stopwatchCasesInternationalDT = new Stopwatch();
-        Stopwatch stopwatchCasesPremiumDomesticDT = new Stopwatch();
-        Stopwatch stopwatchCasesPremiumInternationalDT = new Stopwatch();
-        Stopwatch stopwatchCasesDomesticDTEXT = new Stopwatch();
-        Stopwatch stopwatchCasesInternationalDTEXT = new Stopwatch();
-        Stopwatch stopwatchCasesPremiumDomesticDTEXT = new Stopwatch();
-        Stopwatch stopwatchCasesPremiumInternationalDTEXT = new Stopwatch();
-
-        TimeSpan tsCasesPremiumInternationalDTEXT;
-        TimeSpan tsCasesInternationalDTEXT;
-        TimeSpan tsCasesPremiumDTEXT;
-        TimeSpan tsCasesDTEXT;
-        TimeSpan tsCasesDT;
-        TimeSpan tsCasesPremiumDT;
-        TimeSpan tsCasesIntDT;
-        TimeSpan tsCasesPremiumIntDT;
+        Timers timers = new Timers();
+        TimeSpan totalTime = new TimeSpan();
+        TimeSpan tsMeetings = new TimeSpan();
+        TimeSpan tsCollaboration = new TimeSpan();
+        TimeSpan totalSpanCases = new TimeSpan(0,0,0);
 
         private void StopAllStopWatches()
         {
-            stopwatchCollaboration.Stop();
-            stopwatchMeetings.Stop();
-            stopwatchCasesDomesticDT.Stop();
-            stopwatchCasesDomesticDTEXT.Stop();
-            stopwatchCasesInternationalDT.Stop();
-            stopwatchCasesInternationalDTEXT.Stop();
-            stopwatchCasesPremiumDomesticDT.Stop();
-            stopwatchCasesPremiumDomesticDTEXT.Stop();
-            stopwatchCasesPremiumInternationalDT.Stop();
-            stopwatchCasesPremiumInternationalDTEXT.Stop();
+            timers.StopAllTimers();
         }
 
         private void caseButton_Click(object sender, EventArgs e)
         {
             if (premiumCheckBox.Checked == true && internationalCheckBox.Checked == true && caseComboBox.SelectedItem.ToString() == "Desktop Extensions")
             {
+<<<<<<< HEAD
+                timers.SwitchActiveTimer("Premium Internation Desktop Extensions");
+                timerToolStripStatusLabel.Text = "Currently Running Timer: Premium Internation Desktop Extensions";
+            }
+            else if (premiumCheckBox.Checked == false && internationalCheckBox.Checked == true && caseComboBox.SelectedItem.ToString() == "Desktop Extensions")
+            {
+                timers.SwitchActiveTimer("Internation Desktop Extensions");
+                timerToolStripStatusLabel.Text = "Currently Running Timer: Internation Desktop Extensions";
+=======
                 StopAllStopWatches();
                 stopwatchCasesPremiumInternationalDTEXT.Start();
                 timerToolStripStatusLabel.Text = "Currently Running Timer: Premium International Desktop Extensions";
@@ -65,27 +51,34 @@ namespace timeCardStopwatch
                 StopAllStopWatches();
                 stopwatchCasesInternationalDTEXT.Start();
                 timerToolStripStatusLabel.Text = "Currently Running Timer: International Desktop Extensions";
+>>>>>>> origin/master
             }
             else if (premiumCheckBox.Checked == true && internationalCheckBox.Checked == false && caseComboBox.SelectedItem.ToString() == "Desktop Extensions")
             {
-                StopAllStopWatches();
-                stopwatchCasesPremiumDomesticDTEXT.Start();
+                timers.SwitchActiveTimer("Premium Desktop Extensions");
                 timerToolStripStatusLabel.Text = "Currently Running Timer: Premium Desktop Extensions";
             }
             else if (premiumCheckBox.Checked == false && internationalCheckBox.Checked == false && caseComboBox.SelectedItem.ToString() == "Desktop Extensions")
             {
-                StopAllStopWatches();
-                stopwatchCasesDomesticDTEXT.Start();
+                timers.SwitchActiveTimer("Domestic Desktop Extensions");
                 timerToolStripStatusLabel.Text = "Currently Running Timer: Domestic Desktop Extensions";
             }
             else if (premiumCheckBox.Checked == false && internationalCheckBox.Checked == false && caseComboBox.SelectedItem.ToString() == "Desktop")
             {
-                StopAllStopWatches();
-                stopwatchCasesDomesticDT.Start();
+                timers.SwitchActiveTimer("Domestic Desktop");
                 timerToolStripStatusLabel.Text = "Currently Running Timer: Domestic Desktop";
             }
             else if (premiumCheckBox.Checked == false && internationalCheckBox.Checked == true && caseComboBox.SelectedItem.ToString() == "Desktop")
             {
+<<<<<<< HEAD
+                timers.SwitchActiveTimer("Internation Desktop");
+                timerToolStripStatusLabel.Text = "Currently Running Timer: Internation Desktop";
+            }
+            else if (premiumCheckBox.Checked == true && internationalCheckBox.Checked == true && caseComboBox.SelectedItem.ToString() == "Desktop")
+            {
+                timers.SwitchActiveTimer("Premium Internation Desktop");
+                timerToolStripStatusLabel.Text = "Currently Running Timer: Premium Internation Desktop";
+=======
                 StopAllStopWatches();
                 stopwatchCasesInternationalDT.Start();
                 timerToolStripStatusLabel.Text = "Currently Running Timer: International Desktop";
@@ -95,26 +88,24 @@ namespace timeCardStopwatch
                 StopAllStopWatches();
                 stopwatchCasesPremiumInternationalDT.Start();
                 timerToolStripStatusLabel.Text = "Currently Running Timer: Premium International Desktop";
+>>>>>>> origin/master
             }
             else if (premiumCheckBox.Checked == true && internationalCheckBox.Checked == false && caseComboBox.SelectedItem.ToString() == "Desktop")
             {
-                StopAllStopWatches();
-                stopwatchCasesPremiumDomesticDT.Start();
+                timers.SwitchActiveTimer("Premium Desktop");
                 timerToolStripStatusLabel.Text = "Currently Running Timer: Premium Desktop";
             }
         }
 
         private void collaborationButton_Click(object sender, EventArgs e)
         {
-            StopAllStopWatches();
-            stopwatchCollaboration.Start();
+            timers.SwitchActiveTimer("Collaboration");
             timerToolStripStatusLabel.Text = "Currently Running Timer: Collaboration";
         }
 
         private void meetingButton_Click(object sender, EventArgs e)
         {
-            StopAllStopWatches();
-            stopwatchMeetings.Start();
+            timers.SwitchActiveTimer("Meetings");
             timerToolStripStatusLabel.Text = "Currently Running Timer: Meetings";
         }
 
@@ -127,6 +118,22 @@ namespace timeCardStopwatch
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+<<<<<<< HEAD
+            
+            if(timers.TimersActive.Exists(x => x.Name == "Meetings"))
+            {
+                tsMeetings = timers.TimersActive.Find(x => x.Name == "Meetings").Stopwatch.Elapsed;
+            }
+            if (timers.TimersActive.Exists(x => x.Name == "Collaboration"))
+            {
+                tsCollaboration = timers.TimersActive.Find(x => x.Name == "Collaboration").Stopwatch.Elapsed;
+            }
+
+            totalSpanCases = timers.CaseTime();
+
+            totalTime = timers.AllTimes();
+            
+=======
             tsCasesPremiumInternationalDTEXT = stopwatchCasesPremiumInternationalDTEXT.Elapsed;
             tsCasesInternationalDTEXT = stopwatchCasesInternationalDTEXT.Elapsed;
             tsCasesPremiumDTEXT = stopwatchCasesPremiumDomesticDTEXT.Elapsed;
@@ -145,6 +152,7 @@ namespace timeCardStopwatch
             TimeSpan totalTime = tsCasesPremiumInternationalDTEXT + tsCasesInternationalDTEXT + tsCasesPremiumDTEXT + tsCasesDTEXT
                 + tsCasesDT + tsCasesPremiumDT + tsCasesIntDT + tsCasesPremiumIntDT + tsMeetings + tsCollaboration;
 
+>>>>>>> origin/master
             caseLabel.Text = String.Format("{0:00}:{1:00}:{2:00}",
             totalSpanCases.Hours, totalSpanCases.Minutes, totalSpanCases.Seconds);
 
@@ -166,6 +174,10 @@ namespace timeCardStopwatch
 
         private void TimeCardHelper_FormClosing(object sender, FormClosingEventArgs e)
         {
+<<<<<<< HEAD
+            timers.StopAllTimers();
+            MessageBox.Show(timers.GetAllTimes());
+=======
             StopAllStopWatches();
             MessageBox.Show("TE0352: " + meetingLabel.Text +
                 "\nTE0353: " + collaborationLabel.Text +
@@ -179,6 +191,7 @@ namespace timeCardStopwatch
                 "\n C04558M0100: " + String.Format("{0:00}:{1:00}:{2:00}", tsCasesPremiumIntDT.Hours, tsCasesPremiumIntDT.Minutes, tsCasesPremiumIntDT.Seconds) +
 
                 "\n\n Total Time: " + totalTimeLabel.Text);
+>>>>>>> origin/master
         }
 
         private void lunchButton_Click(object sender, EventArgs e)
