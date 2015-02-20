@@ -160,5 +160,16 @@ namespace PokemonApp
             get { return _image; }
             set { _image = value; }
         }
+
+        /// <summary>
+        /// Maximum amount of health
+        /// </summary>
+        private int _maxHealth;
+
+        public int MaxHealth
+        {
+            get { return _maxHealth; }
+            set { _maxHealth = value; }
+        }
     }
 }

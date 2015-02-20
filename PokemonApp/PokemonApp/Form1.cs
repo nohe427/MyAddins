@@ -30,12 +30,14 @@ namespace PokemonApp
 
             Image image = (System.Drawing.Image)PokemonApp.Properties.Resources.ResourceManager.GetObject("_001Bulbasaur_Dream");
 
-            Monster bulbasaur = new Monster() { Name = "Bulbasaur", Image = image, Level = 1 };
+            Monster bulbasaur = new Monster() { Name = "Bulbasaur", Image = image, Level = 1, Health = 100, MaxHealth = 200 };
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             label1.Text = "";
             typer(bulbasaur.Name, ref label1);
             pictureBox1.Image = bulbasaur.Image;
             pictureBox1.Refresh();
+            progressBar1.Maximum = bulbasaur.MaxHealth;
+            progressBar1.p
         }
 
         private void typer(string Phrase, ref Label labelText)
