@@ -37,18 +37,12 @@ namespace testbox
                 pictures[i].Size = new Size(width, height);
                 if ((i % 2) == 0  && i < 27)
                 {
-                    Graphics ellipse = pictures[i].CreateGraphics();
-                    Brush whiteBrush = new SolidBrush(Color.Aqua);
-                    Pen whitePen = new Pen(Color.AntiqueWhite);
                     Image image = resizeImage(new Bitmap(testbox.Properties.Resources._2000px_Disc_Plain_red_svg), new Size(25, 25));
                     pictures[i].Image = image;
                     pictures[i].SizeMode = PictureBoxSizeMode.CenterImage;
                 }
                 else if ((i % 2) == 0 && i > 44)
                 {
-                    Graphics ellipse = pictures[i].CreateGraphics();
-                    Brush whiteBrush = new SolidBrush(Color.Aqua);
-                    Pen whitePen = new Pen(Color.AntiqueWhite);
                     Image image = resizeImage(new Bitmap(testbox.Properties.Resources.grayCircle), new Size(25, 25));
                     pictures[i].Image = image;
                     pictures[i].SizeMode = PictureBoxSizeMode.CenterImage;
