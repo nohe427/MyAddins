@@ -1,0 +1,27 @@
+﻿<ESRI.Configuration xmlns="http://schemas.esri.com/Desktop/AddIns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>EndPointsAddin</Name>
+  <AddInID>{7d488a3f-d7d7-4e7e-a434-cb9dc567d430}</AddInID>
+  <Description>This adds points to the end of lines.</Description>
+  <Version>1.0</Version>
+  <Image>Images\EndPointsAddin.png</Image>
+  <Author>Alexander Nohe</Author>
+  <Company>ESRI</Company>
+  <Date>5/1/2015</Date>
+  <Targets>
+    <Target name="Desktop" version="10.3" />
+  </Targets>
+  <AddIn language="CLR4.5" library="EndPointsAddin.dll" namespace="EndPointsAddin">
+    <ArcMap>
+      <Extensions>
+        <Extension id="ESRI_EndPointsAddin_AddsTheData" class="AddsTheData" productName="Add Data" showInExtensionDialog="true" autoLoad="true">
+          <Description>Adds the data when you start the application</Description>
+        </Extension>
+      </Extensions>
+      <Editor>
+        <Extensions>
+          <Extension id="ESRI_EndPointsAddin_AddsThePoints" class="AddsThePoints" />
+        </Extensions>
+      </Editor>
+    </ArcMap>
+  </AddIn>
+</ESRI.Configuration>
