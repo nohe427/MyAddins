@@ -1,0 +1,20 @@
+﻿<ESRI.Configuration xmlns="http://schemas.esri.com/Desktop/AddIns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>HistogramClassification</Name>
+  <AddInID>{851085f5-b5e4-479e-a55f-067b4a43727a}</AddInID>
+  <Description>Histogram Classification</Description>
+  <Version>1.0</Version>
+  <Image>Images\HistogramClassification.png</Image>
+  <Author>Alexander Paul Nohe</Author>
+  <Company>Andrew Wang Inc.</Company>
+  <Date>5/4/2015</Date>
+  <Targets>
+    <Target name="Desktop" version="10.3" />
+  </Targets>
+  <AddIn language="CLR4.5" library="HistogramClassification.dll" namespace="HistogramClassification">
+    <ArcMap>
+      <Commands>
+        <Button id="Andrew_Wang_Inc_HistogramClassification_HistoClass" class="HistoClass" message="HistoClass" caption="HistoClass" tip="HistoClass" category="Andrew Wang" image="Images\HistoClass.png" />
+      </Commands>
+    </ArcMap>
+  </AddIn>
+</ESRI.Configuration>
