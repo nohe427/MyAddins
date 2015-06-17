@@ -1,17 +1,32 @@
 package com.alexandern.testingapp;
 
+import android.content.DialogInterface;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 
 
 public class MainActivity extends ActionBarActivity {
+    Button myButton;
+    TextView myText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        myButton = (Button)findViewById(R.id.button);
+        myText = (TextView)findViewById(R.id.textView);
+
+        myButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                myText.setText("Button clicked!");
+            }
+        });
     }
 
     @Override
