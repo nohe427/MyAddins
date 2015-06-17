@@ -13,6 +13,7 @@ import android.widget.TextView;
 public class MainActivity extends ActionBarActivity {
     Button myButton;
     TextView myText;
+    Button newScreenButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +21,7 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
         myButton = (Button)findViewById(R.id.button);
         myText = (TextView)findViewById(R.id.textView);
+        newScreenButton = (Button)findViewById(R.id.button2);
 
         myButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -27,6 +29,14 @@ public class MainActivity extends ActionBarActivity {
                 myText.setText("Button clicked!");
             }
         });
+
+        newScreenButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setContentView(R.layout.new_screen);
+            }
+        });
+
     }
 
     @Override
