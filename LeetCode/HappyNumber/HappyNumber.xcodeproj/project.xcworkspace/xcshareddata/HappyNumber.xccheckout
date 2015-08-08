@@ -5,16 +5,16 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>20FE25D9-F1DB-4125-88C1-73FF492DC473</string>
+	<string>1734ABE0-CE0E-4C65-B38F-1AC0D90F71E5</string>
 	<key>IDESourceControlProjectName</key>
-	<string>NoheRocks</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>A710F9C70E18757A9259F87744C4CE27FF80E30F</key>
 		<string>https://github.com/nohe427/MyAddins.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>untitled folder/NoheRocks/NoheRocks.xcodeproj</string>
+	<string>LeetCode/HappyNumber/HappyNumber.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>A710F9C70E18757A9259F87744C4CE27FF80E30F</key>
