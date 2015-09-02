@@ -1,0 +1,4 @@
+module ArcGIS.Runtime
+plugin ArcGISRuntimePlugin
+classname ArcGISRuntimePlugin
+typeinfo ArcGISRuntimePlugin.qmltypes

@@ -1,0 +1,4 @@
+module ArcGIS.Extras
+plugin ArcGISExtrasPlugin
+classname ArcGISExtrasPlugin
+typeinfo ArcGISExtrasPlugin.qmltypes
